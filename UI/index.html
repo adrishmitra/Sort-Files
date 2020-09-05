@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width,
+    initial-scale = 1, shrink-to-fit=no">
+    <title>Sort Files</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' href='style.css'>
+    <script type="text/javascript" src='main.js'></script>
+    <script type="text/javascript" src="/eel.js"></script>
+
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="bootstrap-4.5.2-dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="bootstrap-4.5.2-dist/css/bootstrap.min.css">
+</head>
+<body class="app-body h-100" >
+    <div class="container app-container h-100">
+    <div class="row align-items-center h-100">
+        <div class="col"></div>
+        <div class="col-8">
+            <div class="card app-card align-middle">
+                <div class="card-block">
+                    <div class="row align-items-center">
+                        <div class="col-7">
+                            <h3 class="path-select">Select Folder to be sorted</h3>
+                        </div>
+                        <div class="col d-flex justify-content-center">
+                            <button style="margin-right: 27px;" type="button" class="btn btn-primary btn-block" onclick="onClick_path_btn()" >Select</button>
+                        </div>
+                    </div>
+                    <p style="font-size: 16px; padding-left: 20px;" id="dir"></p>
+                    <hr style="margin: 0px 15px 20px 15px;">
+                    
+                    <label style="padding: 0px 15px 10px 20px; font-size: 20px;">Folders to create: </label>
+
+                    <!-- #region Checkboxes -->
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                            <input checked type="checkbox" id="app_chk" aria-label="Checkbox for following text input">
+                          </div>
+                        </div>
+                        <input type="text" class="form-control" value="Applications" id="app_inp"
+                        aria-label="Text input with checkbox">
+                    </div> 
+
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                            <input checked type="checkbox" id="img_chk" aria-label="Checkbox for following text input">
+                          </div>
+                        </div>
+                        <input type="text" class="form-control" value="Images" id="img_inp"
+                        aria-label="Text input with checkbox">
+                    </div>
+
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                            <input checked type="checkbox" id="vdo_chk" aria-label="Checkbox for following text input">
+                          </div>
+                        </div>
+                        <input type="text" class="form-control" value="Videos" id="vdo_inp"
+                        aria-label="Text input with checkbox">
+                    </div>
+
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                            <input checked type="checkbox" id="doc_chk" aria-label="Checkbox for following text input">
+                          </div>
+                        </div>
+                        <input type="text" class="form-control" value="Docs" id="doc_inp"
+                        aria-label="Text input with checkbox">
+                    </div>
+
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                            <input checked type="checkbox" id="zip_chk" aria-label="Checkbox for following text input">
+                          </div>
+                        </div>
+                        <input type="text" class="form-control" value="Zip_Files" id="zip_inp"
+                        aria-label="Text input with checkbox">
+                    </div>
+
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                            <input checked type="checkbox" id="mzc_chk" aria-label="Checkbox for following text input">
+                          </div>
+                        </div>
+                        <input type="text" class="form-control" value="Music" id="mzc_inp"
+                        aria-label="Text input with checkbox">
+                    </div>
+                    <!-- #endregion -->
+                    
+                    <div class="col d-flex justify-content-center">
+                        <button id="start" onclick="start()" type="button" style="margin-top: 10px; margin-bottom: 20px;" class="btn btn-primary btn-block">Sort Now!</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col"></div>
+    </div>
+    </div>
+
+
+<script type="text/javascript">
+    function getfolder(e) {
+        var files = e.target.files;
+        var path = files[0].webkitRelativePath;
+        var Folder = path.split("/");
+        alert(Folder[0]);}
+</script>
+      
+</body>
+</html>
